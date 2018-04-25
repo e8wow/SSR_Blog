@@ -6,9 +6,10 @@
                 <div :class="`${prefixCls}__nickname`">Jelf</div>
             </div>
             <navigation-list>
-                <navigation-item active>分类</navigation-item>
+                <navigation-item active>首页</navigation-item>
+                <navigation-item>分类</navigation-item>
                 <navigation-item>标签</navigation-item>
-                <navigation-item>标签</navigation-item>
+                <navigation-item>留言</navigation-item>
             </navigation-list>
         </div>
     </div>
@@ -49,9 +50,6 @@
         width: 35%;
         height: 100vh;
         display: flex;
-        position: fixed;
-        top: 0;
-        left: 0;
         padding: 80px 0;
         background: linear-gradient(110deg, #1576DA, #18CCB1);
         box-sizing: border-box;
