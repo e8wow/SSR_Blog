@@ -18,10 +18,15 @@ module.exports = {
         meta: [
             {charset: 'utf-8'},
             {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-            {hid: 'description', name: 'description', content: 'Jelf 博客'}
+            {hid: 'description', name: 'description', content: 'Jelf 博客'},
+            {'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1'}
         ],
         link: [
-            {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+            {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+            {rel: 'stylesheet', type: 'text/css', href: '//at.alicdn.com/t/font_646835_v4kmrx2f8h44e7b9.css'} // blog图标库
+        ],
+        script: [
+            {src: '//at.alicdn.com/t/font_646835_v4kmrx2f8h44e7b9.js'}
         ]
     },
     /*
@@ -30,16 +35,16 @@ module.exports = {
     loading: {color: '#18CCB1'},
     css: [
         './assets/styles/normalize.css',
-        './assets/styles/index.scss',
-        'element-ui/lib/theme-chalk/index.css'
+        './assets/styles/index.scss'
+        // 'element-ui/lib/theme-chalk/index.css'
     ],
     /*
     ** Build configuration
     */
     build: {
-        vendor: [
-            'element-ui'
-        ],
+        // vendor: [
+        //     'element-ui'
+        // ],
         /*
         ** Run ESLint on save
         */
@@ -55,7 +60,8 @@ module.exports = {
         }
     },
     plugins: [
-        {src: '~plugins/element-ui', ssr: true}
+        // {src: '~plugins/element-ui', ssr: true}
+        {src: '~plugins/globalComponents', ssr: true}
     ],
     modules: [
         '@nuxtjs/axios'
