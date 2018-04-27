@@ -6,10 +6,10 @@
                 <div :class="`${prefixCls}__nickname`">Jelf</div>
             </div>
             <navigation-list>
-                <navigation-item active>首页</navigation-item>
-                <navigation-item>分类</navigation-item>
-                <navigation-item>标签</navigation-item>
-                <navigation-item>留言</navigation-item>
+                <navigation-item>Home</navigation-item>
+                <navigation-item active>Classification</navigation-item>
+                <navigation-item>Tags</navigation-item>
+                <navigation-item>Contact</navigation-item>
             </navigation-list>
         </div>
     </div>
