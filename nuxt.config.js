@@ -23,10 +23,10 @@ module.exports = {
         ],
         link: [
             {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-            {rel: 'stylesheet', type: 'text/css', href: '//at.alicdn.com/t/font_646835_v4kmrx2f8h44e7b9.css'} // blog图标库
+            {rel: 'stylesheet', type: 'text/css', href: '//at.alicdn.com/t/font_646835_4hqo6jldh2d18aor.css'} // blog图标库
         ],
         script: [
-            {src: '//at.alicdn.com/t/font_646835_v4kmrx2f8h44e7b9.js'}
+            {src: '//at.alicdn.com/t/font_646835_4hqo6jldh2d18aor.js'}
         ]
     },
     /*

@@ -51,7 +51,7 @@
         height: 100vh;
         display: flex;
         padding: 80px 0;
-        background: linear-gradient(110deg, #1576DA, #18CCB1);
+        background: linear-gradient(110deg, #1576DA, $color-primary);
         box-sizing: border-box;
         &__wrap {
             display: flex;

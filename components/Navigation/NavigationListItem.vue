@@ -36,11 +36,16 @@
         padding-left: 20px;
         color: #FFF;
         cursor: pointer;
+        transition: color 300ms ease-in-out;
         &-active {
-            color: #18CCB1;
+            color: $color-primary;
             background-color: #FFF;
             border-top-left-radius: 8px;
             border-bottom-left-radius: 8px;
+            box-shadow: 0 0 50px #FFF;
+        }
+        &:hover {
+            color: $color-primary-active;
         }
     }
 </style>

@@ -1,14 +1,7 @@
 <template>
     <div :class="prefixCls">
         <article-list>
-            <article-list-item title="How to be an effective web developer" subTitle=""/>
-            <article-list-item title="How to be an effective web developer" subTitle=""/>
-            <article-list-item title="How to be an effective web developer" subTitle=""/>
-            <article-list-item title="How to be an effective web developer" subTitle=""/>
-            <article-list-item title="How to be an effective web developer" subTitle=""/>
-            <article-list-item title="How to be an effective web developer" subTitle=""/>
-            <article-list-item title="How to be an effective web developer" subTitle=""/>
-            <article-list-item title="How to be an effective web developer" subTitle=""/>
+            <article-list-item v-for="i in 100" key="i" title="Article Title One"/>
         </article-list>
     </div>
 </template>
