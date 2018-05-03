@@ -37,6 +37,7 @@
         color: #FFF;
         cursor: pointer;
         transition: color 300ms ease-in-out;
+        font-size: 16px;
         &-active {
             color: $color-primary;
             background-color: #FFF;

@@ -1,7 +1,7 @@
 <template>
     <li :class="prefixCls">
         <h2>
-            <nuxt-link :class="`${prefixCls}__title`" to="/about">{{title}}</nuxt-link>
+            <nuxt-link :class="`${prefixCls}__title`" :to="{name:'blog-id',params:{id:'123'}}">{{title}}</nuxt-link>
         </h2>
         <div :class="`${prefixCls}__introduction`">
             <strong :class="`${prefixCls}__introductionContent`">
