@@ -1,13 +1,9 @@
 module.exports = {
     babel: {
-        'plugins': [['component', [
-            {
-                'libraryName': 'element-ui',
-                'styleLibraryName': 'theme-default'
-            },
-            'transform-async-to-generator',
-            'transform-runtime'
-        ]]],
+        'plugins': [['import', {
+            'libraryName': 'iview',
+            'libraryDirectory': 'src/components'
+        }]],
         comments: true
     },
     /*
@@ -34,17 +30,17 @@ module.exports = {
     */
     loading: {color: '#18CCB1'},
     css: [
-        './assets/styles/normalize.css',
-        './assets/styles/index.scss'
+        './assets/styles/index.scss',
         // 'element-ui/lib/theme-chalk/index.css'
+        'iview/dist/styles/iview.css'
     ],
     /*
     ** Build configuration
     */
     build: {
-        // vendor: [
-        //     'element-ui'
-        // ],
+        vendor: [
+            'iview'
+        ],
         /*
         ** Run ESLint on save
         */
@@ -61,7 +57,8 @@ module.exports = {
     },
     plugins: [
         // {src: '~plugins/element-ui', ssr: true}
-        {src: '~plugins/globalComponents', ssr: true}
+        {src: '~plugins/globalComponents', ssr: true},
+        {src: '~plugins/iview', ssr: true}
     ],
     modules: [
         '@nuxtjs/axios'
