@@ -1,9 +1,9 @@
 <template>
     <div :class="prefixCls">
         <Sider class="hide-scroll-bar" :style="siderStyles">
-            <Menu width="auto" theme="dark">
+            <Menu width="auto" theme="dark" @on-select="handlerSelectedMenu" :active-name="selectedMenuName">
                 <template v-for="menu in menusData">
-                    <Submenu v-if="menu.items">
+                    <Submenu v-if="menu.items" :name="menu.name">
                         <template slot="title">
                             <Icon class="menu__icon" v-if="menu.icon" :type="menu.icon"/>
                             {{menu.text}}
@@ -23,9 +23,7 @@
         <Layout :style="layoutStyles">
             <Header :style="headerStyles"/>
             <Content :style="contentStyles">
-                <Card>
-                    <div style="height: 1500px">Content</div>
-                </Card>
+                <nuxt/>
             </Content>
         </Layout>
     </div>
@@ -60,7 +58,7 @@
                 return {
                     position: 'sticky',
                     top: 0,
-                    zIndex: 1,
+                    zIndex: 1501,
                     background: '#fff',
                     boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'
                 }
@@ -72,6 +70,14 @@
             },
             menusData() {
                 return this.$store.state.backend.menus
+            },
+            selectedMenuName() {
+                return this.$route.matched[0].name
+            }
+        },
+        methods: {
+            handlerSelectedMenu(name) {
+                this.$router.push({name})
             }
         }
     }
