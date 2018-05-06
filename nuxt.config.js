@@ -6,6 +6,11 @@ module.exports = {
         }]],
         comments: true
     },
+    cache: true,
+    router: {
+        linkActiveClass: 'nuxt__link-active',
+        linkExactActiveClass: 'nuxt__linkExact-active'
+    },
     /*
     ** Headers of the page
     */
@@ -15,7 +20,7 @@ module.exports = {
             {charset: 'utf-8'},
             {name: 'viewport', content: 'width=device-width, initial-scale=1'},
             {hid: 'description', name: 'description', content: 'Jelf 博客'},
-            {'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1'}
+            {httpEquiv: 'X-UA-Compatible', content: 'IE=edge,chrome=1'}
         ],
         link: [
             {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
@@ -30,16 +35,17 @@ module.exports = {
     */
     loading: {color: '#18CCB1'},
     css: [
-        './assets/styles/index.scss',
-        // 'element-ui/lib/theme-chalk/index.css'
-        'iview/dist/styles/iview.css'
+        './assets/styles/base.scss',
+        'iview/dist/styles/iview.css',
+        'mavon-editor/dist/css/index.css'
     ],
     /*
     ** Build configuration
     */
     build: {
         vendor: [
-            'iview'
+            'iview',
+            'mavon-editor'
         ],
         /*
         ** Run ESLint on save
@@ -56,7 +62,7 @@ module.exports = {
         }
     },
     plugins: [
-        // {src: '~plugins/element-ui', ssr: true}
+        {src: '~plugins/mavon-editor', ssr: false},
         {src: '~plugins/globalComponents', ssr: true},
         {src: '~plugins/iview', ssr: true}
     ],
@@ -81,4 +87,4 @@ module.exports = {
             }
         }
     }
-}
+};
