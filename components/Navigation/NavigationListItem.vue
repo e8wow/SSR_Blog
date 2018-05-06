@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    const prefixCls = 'navigationItem';
+    const prefixCls = 'navigationItem'
 
     export default {
         name: prefixCls,

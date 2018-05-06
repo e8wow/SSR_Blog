@@ -10,7 +10,7 @@
 <script>
     import Navigation from '../components/Navigation/Navigation'
 
-    const prefixCls = 'defaultLayout';
+    const prefixCls = 'defaultLayout'
     export default {
         components: {Navigation},
         props: {

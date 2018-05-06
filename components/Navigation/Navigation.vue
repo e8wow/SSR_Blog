@@ -19,7 +19,7 @@
     import NavigationList from './NavigationList'
     import NavigationItem from './NavigationListItem'
 
-    const prefixCls = 'navigation';
+    const prefixCls = 'navigation'
 
     export default {
         name: prefixCls,
