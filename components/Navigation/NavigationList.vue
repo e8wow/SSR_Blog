@@ -1,6 +1,8 @@
 <template>
     <nav :class="prefixCls">
-        <slot></slot>
+        <ul :class="`${prefixCls}__container`">
+            <slot></slot>
+        </ul>
     </nav>
 </template>
 
@@ -12,7 +14,7 @@
         props: {
             prefixCls: {
                 type: String,
-                default: prefixCls
+                default: () => prefixCls
             }
         }
     }
@@ -24,5 +26,8 @@
     $navigationPrefixCls: 'navigationList';
     .#{$navigationPrefixCls} {
         width: 200px;
+        &__container {
+            list-style-type: none;
+        }
     }
 </style>

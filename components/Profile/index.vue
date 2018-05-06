@@ -1,42 +1,23 @@
 <template>
-    <div :class="prefixCls">
+    <aside :class="prefixCls">
         <div :class="`${prefixCls}__wrap`">
             <header :class="`${prefixCls}__user`">
                 <img :class="`${prefixCls}__logo`" src="../../static/images/avatar.jpg">
                 <div :class="`${prefixCls}__nickname`">Jelf</div>
             </header>
-            <navigation-list>
-                <navigation-item>Home</navigation-item>
-                <navigation-item active>Classification</navigation-item>
-                <navigation-item>Tags</navigation-item>
-                <navigation-item>Contact</navigation-item>
-            </navigation-list>
+            <slot/>
         </div>
-    </div>
+    </aside>
 </template>
 
 <script>
-    import NavigationList from './NavigationList'
-    import NavigationItem from './NavigationListItem'
-
-    const prefixCls = 'navigation'
-
+    const prefixCls = 'profile'
     export default {
         name: prefixCls,
-        components: {NavigationItem, NavigationList},
         props: {
             prefixCls: {
                 type: String,
-                default: prefixCls
-            }
-        },
-        data() {
-            return {
-                searchText: ''
-            }
-        },
-        methods: {
-            handleSelect() {
+                default: () => prefixCls
             }
         }
     }
@@ -45,8 +26,8 @@
 <style lang="scss">
     @import "../../assets/styles/index";
 
-    $navigationPrefixCls: 'navigation';
-    .#{$navigationPrefixCls} {
+    $profilePrefixCls: 'profile';
+    .#{$profilePrefixCls} {
         width: 35%;
         height: 100vh;
         display: flex;

@@ -1,7 +1,9 @@
 <template>
-    <nuxt-link :to="to" :class="rootClasss">
-        <slot></slot>
-    </nuxt-link>
+    <li :class="navigationItemClasss">
+        <nuxt-link :class="`${prefixCls}__link`" :to="to">
+            <slot></slot>
+        </nuxt-link>
+    </li>
 </template>
 
 <script>
@@ -21,7 +23,7 @@
             active: Boolean
         },
         computed: {
-            rootClasss() {
+            navigationItemClasss() {
                 return [
                     this.prefixCls,
                     {[`${this.prefixCls}-active`]: this.active}
@@ -37,20 +39,24 @@
     $navigationPrefixCls: 'navigationItem';
     .#{$navigationPrefixCls} {
         line-height: 3.5;
-        padding-left: 20px;
-        color: #FFF;
         cursor: pointer;
-        transition: color 300ms ease-in-out;
         font-size: 16px;
-        display: block;
+        .#{$navigationPrefixCls}__link {
+            display: block;
+            color: #FFF;
+            transition: color 300ms ease-in-out;
+            padding-left: 20px;
+        }
         &-active {
-            color: $color-primary;
             background-color: #FFF;
             border-top-left-radius: 8px;
             border-bottom-left-radius: 8px;
             box-shadow: 0 0 50px #FFF;
+            .#{$navigationPrefixCls}__link {
+                color: $color-primary;
+            }
         }
-        &:hover {
+        &:hover .#{$navigationPrefixCls}__link {
             color: $color-primary-active;
         }
     }

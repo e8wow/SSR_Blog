@@ -10,6 +10,7 @@
     import {ArticleList, ArticleListItem} from '../components/ArticleList/index'
 
     export default {
+        layout: 'main',
         components: {ArticleList, ArticleListItem},
         props: {
             prefixCls: {
