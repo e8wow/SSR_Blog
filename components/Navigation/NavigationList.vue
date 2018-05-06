@@ -1,11 +1,11 @@
 <template>
-    <div :class="prefixCls">
+    <nav :class="prefixCls">
         <slot></slot>
-    </div>
+    </nav>
 </template>
 
 <script>
-    const prefixCls = 'navigationList'
+    const prefixCls = 'navigationList';
 
     export default {
         name: prefixCls,

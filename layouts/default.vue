@@ -1,16 +1,16 @@
 <template>
     <div :class="prefixCls">
         <navigation/>
-        <div :class="`${prefixCls}__container`">
+        <main :class="`${prefixCls}__container`">
             <nuxt/>
-        </div>
+        </main>
     </div>
 </template>
 
 <script>
     import Navigation from '../components/Navigation/Navigation'
 
-    const prefixCls = 'defaultLayout'
+    const prefixCls = 'defaultLayout';
     export default {
         components: {Navigation},
         props: {

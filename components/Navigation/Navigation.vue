@@ -1,10 +1,10 @@
 <template>
     <div :class="prefixCls">
         <div :class="`${prefixCls}__wrap`">
-            <div :class="`${prefixCls}__user`">
+            <header :class="`${prefixCls}__user`">
                 <img :class="`${prefixCls}__logo`" src="../../static/images/avatar.jpg">
                 <div :class="`${prefixCls}__nickname`">Jelf</div>
-            </div>
+            </header>
             <navigation-list>
                 <navigation-item>Home</navigation-item>
                 <navigation-item active>Classification</navigation-item>
@@ -19,7 +19,7 @@
     import NavigationList from './NavigationList'
     import NavigationItem from './NavigationListItem'
 
-    const prefixCls = 'navigation'
+    const prefixCls = 'navigation';
 
     export default {
         name: prefixCls,

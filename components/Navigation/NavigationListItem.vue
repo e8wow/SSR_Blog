@@ -1,11 +1,11 @@
 <template>
-    <div :class="rootClasss">
+    <nuxt-link :to="to" :class="rootClasss">
         <slot></slot>
-    </div>
+    </nuxt-link>
 </template>
 
 <script>
-    const prefixCls = 'navigationItem'
+    const prefixCls = 'navigationItem';
 
     export default {
         name: prefixCls,
@@ -13,6 +13,10 @@
             prefixCls: {
                 type: String,
                 default: prefixCls
+            },
+            to: {
+                type: [String, Object],
+                default: () => ''
             },
             active: Boolean
         },
@@ -38,6 +42,7 @@
         cursor: pointer;
         transition: color 300ms ease-in-out;
         font-size: 16px;
+        display: block;
         &-active {
             color: $color-primary;
             background-color: #FFF;
