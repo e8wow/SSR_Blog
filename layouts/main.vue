@@ -42,12 +42,12 @@
         &__container {
             flex: 1;
             max-height: 100vh;
-            overflow-y: auto;
-            overflow-x: hidden;
             display: flex;
         }
         &__main {
             flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
     }
 </style>
