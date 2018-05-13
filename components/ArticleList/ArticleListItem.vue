@@ -18,16 +18,22 @@
         </div>
         <ul :class="`${prefixCls}__operation`">
             <li :class="`${prefixCls}__operationItem`">
-                <icon icon="blog-praise" size="20" svg color="#F00"/>
-                <var>1</var>
+                <button>
+                    <icon icon="blog-praise" size="20" svg color="#F00"/>
+                    <var>1</var>
+                </button>
             </li>
             <li :class="`${prefixCls}__operationItem`">
-                <icon icon="blog-eye" size="20" svg color="#1576DA"/>
-                <var>100</var>
+                <button>
+                    <icon icon="blog-eye" size="20" svg color="#1576DA"/>
+                    <var>100</var>
+                </button>
             </li>
             <li :class="`${prefixCls}__operationItem`">
-                <icon icon="blog-comment" size="20" svg color="#18CCB1"/>
-                <var>100</var>
+                <button>
+                    <icon icon="blog-comment" size="20" svg color="#18CCB1"/>
+                    <var>100</var>
+                </button>
             </li>
         </ul>
     </li>
@@ -90,14 +96,19 @@
             padding: 0;
             margin: 25px 0 0;
             &Item { // __operationItem
-                display: flex;
-                align-items: center;
                 font-size: 14px;
-                cursor: pointer;
                 color: $article-item-operation-color;
                 margin-right: 20px;
                 .icon-blog {
                     margin: 0 5px;
+                }
+                button {
+                    display: flex;
+                    align-items: center;
+                    background: transparent;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
                 }
                 var {
                     font-style: normal;
