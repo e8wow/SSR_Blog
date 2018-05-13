@@ -11,6 +11,7 @@
                         </FormItem>
                     </i-form>
                     <mavon-editor :class="`${prefixCls}__editor`" @fullScreen="handlerFullScreen"
+                                  placeholder="请输入markdown文章"
                                   :toolbars="toolbars"></mavon-editor>
                 </Card>
             </i-col>
@@ -22,13 +23,59 @@
                                 <Icon type="paper-airplane"></Icon>
                                 发布
                             </p>
-                            <p class="mt10">状&nbsp;&nbsp;态：</p>
+                            <p class="mt10">状&nbsp;&nbsp;态：
+                                <i-select></i-select>
+                            </p>
                             <p class="mt10">公开度：</p>
                             <p class="mt10">立即发布：</p>
                         </Card>
                     </i-col>
                     <i-col class="mt10">
-                        <Card></Card>
+                        <Card>
+                            <p slot="title">
+                                <Icon type="navicon-round"></Icon>
+                                分类目录
+                            </p>
+                            <Tabs>
+                                <TabPane label="所有分类目录">
+                                    <div style="height: 250px">
+                                        <Tree :data="classification" show-checkbox/>
+                                    </div>
+                                </TabPane>
+                                <TabPane label="常用目录">
+                                    <div>
+                                        <Tree/>
+                                    </div>
+                                </TabPane>
+                            </Tabs>
+                        </Card>
+                    </i-col>
+                    <i-col class="mt10">
+                        <Card>
+                            <p slot="title">
+                                <Icon type="ios-pricetags-outline"></Icon>
+                                标签
+                            </p>
+                            <Row>
+                                <i-col span="18">
+                                    <i-select v-model="tags" filterable multiple placeholder="请选择文章标签">
+                                        <i-option value="vue">vue</i-option>
+                                        <i-option value="react">react</i-option>
+                                        <i-option value="angular">angular</i-option>
+                                        <i-option value="bootstrap">bootstrap</i-option>
+                                        <i-option value="jquery">jquery</i-option>
+                                        <i-option value="graphQL">graphQL</i-option>
+                                        <i-option value="REST">REST</i-option>
+                                        <i-option value="ES6">ES6</i-option>
+                                    </i-select>
+                                </i-col>
+                                <i-col span="6">
+                                    <Button long>
+                                        新建
+                                    </Button>
+                                </i-col>
+                            </Row>
+                        </Card>
                     </i-col>
                 </Row>
             </i-col>
@@ -83,7 +130,33 @@
                     /* 2.2.1 */
                     subfield: true, // 单双栏模式
                     preview: true // 预览
-                }
+                },
+                tags: [],
+                classification: [{
+                    title: 'vue'
+                }, {
+                    title: 'vue'
+                }, {
+                    title: 'vue'
+                }, {
+                    title: 'vue'
+                }, {
+                    title: 'vue'
+                }, {
+                    title: 'vue'
+                }, {
+                    title: 'vue'
+                }, {
+                    title: 'vue'
+                }, {
+                    title: 'vue'
+                }, {
+                    title: 'vue'
+                }, {
+                    title: 'vue'
+                }, {
+                    title: 'vue'
+                }]
             }
         },
         methods: {
