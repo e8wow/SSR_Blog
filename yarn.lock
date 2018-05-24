@@ -108,6 +108,15 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@nuxtjs/apollo@^3.0.6":
+  version "3.0.6"
+  resolved "http://registry.npm.taobao.org/@nuxtjs/apollo/download/@nuxtjs/apollo-3.0.6.tgz#35bac2c192533242e186d0996731be0f99763308"
+  dependencies:
+    apollo-cache-inmemory "^1.1.10"
+    apollo-client "^2.2.6"
+    isomorphic-fetch "^2.2.1"
+    vue-apollo "^3.0.0-beta.5"
+
 "@nuxtjs/axios@^5.3.1":
   version "5.3.1"
   resolved "http://registry.npm.taobao.org/@nuxtjs/axios/download/@nuxtjs/axios-5.3.1.tgz#9f9e6c817dae44c16955af659f6d5ac2a8085148"
@@ -258,7 +267,7 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apollo-cache-inmemory@^1.2.1:
+apollo-cache-inmemory@^1.1.10, apollo-cache-inmemory@^1.2.1:
   version "1.2.1"
   resolved "http://registry.npm.taobao.org/apollo-cache-inmemory/download/apollo-cache-inmemory-1.2.1.tgz#1f8222270aa7983eb9d2ac30057196378ab3bb01"
   dependencies:
@@ -272,7 +281,7 @@ apollo-cache@^1.1.8:
   dependencies:
     apollo-utilities "^1.0.12"
 
-apollo-client@^2.3.1:
+apollo-client@^2.2.6, apollo-client@^2.3.1:
   version "2.3.1"
   resolved "http://registry.npm.taobao.org/apollo-client/download/apollo-client-2.3.1.tgz#64b204779b7e8b21f901529527a9a9c973eb7fd4"
   dependencies:
@@ -3668,6 +3677,13 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "http://registry.npm.taobao.org/isobject/download/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
+isomorphic-fetch@^2.2.1:
+  version "2.2.1"
+  resolved "http://registry.npm.taobao.org/isomorphic-fetch/download/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
+  dependencies:
+    node-fetch "^1.0.1"
+    whatwg-fetch ">=0.10.0"
+
 isstream@~0.1.2:
   version "0.1.2"
   resolved "http://registry.npm.taobao.org/isstream/download/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
@@ -4256,6 +4272,13 @@ no-case@^2.2.0:
 node-fetch@1.6.3:
   version "1.6.3"
   resolved "http://registry.npm.taobao.org/node-fetch/download/node-fetch-1.6.3.tgz#dc234edd6489982d58e8f0db4f695029abcd8c04"
+  dependencies:
+    encoding "^0.1.11"
+    is-stream "^1.0.1"
+
+node-fetch@^1.0.1:
+  version "1.7.3"
+  resolved "http://registry.npm.taobao.org/node-fetch/download/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
   dependencies:
     encoding "^0.1.11"
     is-stream "^1.0.1"
@@ -6743,6 +6766,12 @@ vue-apollo@^3.0.0-beta.12:
   dependencies:
     throttle-debounce "^1.0.1"
 
+vue-apollo@^3.0.0-beta.5:
+  version "3.0.0-beta.13"
+  resolved "http://registry.npm.taobao.org/vue-apollo/download/vue-apollo-3.0.0-beta.13.tgz#fc934b3abb44cb74f4789c5a6713c0df69192988"
+  dependencies:
+    throttle-debounce "^1.0.1"
+
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/vue-eslint-parser/download/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"
@@ -6919,6 +6948,10 @@ webpack@^3.11.0:
     watchpack "^1.4.0"
     webpack-sources "^1.0.1"
     yargs "^8.0.2"
+
+whatwg-fetch@>=0.10.0:
+  version "2.0.4"
+  resolved "http://registry.npm.taobao.org/whatwg-fetch/download/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
 
 whet.extend@~0.9.9:
   version "0.9.9"

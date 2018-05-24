@@ -51,6 +51,11 @@ module.exports = {
         ** Run ESLint on save
         */
         extend(config, {isDev, isClient}) {
+            config.module.rules.push({
+                test: /\.(graphql|gql)$/,
+                exclude: /node_modules/,
+                loader: 'graphql-tag/loader'
+            })
             if (isDev && isClient) {
                 config.module.rules.push({
                     enforce: 'pre',
@@ -62,13 +67,14 @@ module.exports = {
         }
     },
     plugins: [
-        {src: '~plugins/apollo-graphQL', ssr: true},
+        // {src: '~plugins/apollo-graphQL', ssr: true},
         {src: '~plugins/globalComponents', ssr: true},
         {src: '~plugins/iview', ssr: true},
         {src: '~plugins/mavon-editor', ssr: false}
     ],
     modules: [
-        '@nuxtjs/axios'
+        '@nuxtjs/axios',
+        '@nuxtjs/apollo'
     ],
     axios: {
         timeout: 10000,
@@ -87,5 +93,10 @@ module.exports = {
                 ]
             }
         }
+    },
+    apollo: {
+        clientConfigs: {
+            default: '~/apollo/client-configs/default.js'
+        }
     }
-};
+}

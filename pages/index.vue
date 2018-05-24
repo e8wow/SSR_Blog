@@ -7,16 +7,30 @@
 </template>
 
 <script>
+    import articles from '../apollo/graphQL/articles'
     import {ArticleList, ArticleListItem} from '../components/ArticleList/index'
 
     export default {
         layout: 'main',
         components: {ArticleList, ArticleListItem},
+        apollo: {
+            articles: {
+                query: articles
+            }
+        },
+        data() {
+            return {
+                articles: []
+            }
+        },
         props: {
             prefixCls: {
                 type: String,
                 default: () => 'home'
             }
+        },
+        created() {
+            console.log(this.$apollo.queries)
         }
     }
 </script>
