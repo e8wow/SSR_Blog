@@ -62,9 +62,10 @@ module.exports = {
         }
     },
     plugins: [
-        {src: '~plugins/mavon-editor', ssr: false},
+        {src: '~plugins/apollo-graphQL', ssr: true},
         {src: '~plugins/globalComponents', ssr: true},
-        {src: '~plugins/iview', ssr: true}
+        {src: '~plugins/iview', ssr: true},
+        {src: '~plugins/mavon-editor', ssr: false}
     ],
     modules: [
         '@nuxtjs/axios'
