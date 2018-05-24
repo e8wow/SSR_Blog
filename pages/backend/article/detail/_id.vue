@@ -3,6 +3,10 @@
         <Row :gutter="10">
             <i-col span="18">
                 <Card>
+                    <p slot="title">
+                        <Icon type="paper-airplane"/>
+                        文章内容
+                    </p>
                     <i-form :label-width="80">
                         <FormItem label="文章标题" required>
                             <i-input>
@@ -10,9 +14,9 @@
                             </i-input>
                         </FormItem>
                     </i-form>
-                    <mavon-editor :class="`${prefixCls}__editor`" @fullScreen="handlerFullScreen"
+                    <mavon-editor :class="`${prefixCls}__editor`"
                                   placeholder="请输入markdown文章"
-                                  :toolbars="toolbars"></mavon-editor>
+                                  :toolbars="toolbars"/>
                 </Card>
             </i-col>
             <i-col span="6">
@@ -20,14 +24,34 @@
                     <i-col>
                         <Card>
                             <p slot="title">
-                                <Icon type="paper-airplane"></Icon>
+                                <Icon type="paper-airplane"/>
                                 发布
                             </p>
-                            <p class="mt10">状&nbsp;&nbsp;态：
-                                <i-select></i-select>
-                            </p>
-                            <p class="mt10">公开度：</p>
-                            <p class="mt10">立即发布：</p>
+                            <i-form :label-width="80">
+                                <form-item>
+                                    <span slot="label">
+                                        <Icon type="android-time"/>     状态:
+                                    </span>
+                                    <i-select></i-select>
+                                </form-item>
+                                <form-item>
+                                     <span slot="label">
+                                        <Icon type="eye"/> 公开度:
+                                    </span>
+                                    <i-select></i-select>
+                                </form-item>
+                                <form-item>
+                                     <span slot="label">
+                                        <Icon type="ios-calendar-outline"/> 立即发布:
+                                    </span>
+                                    <i-select></i-select>
+                                </form-item>
+                                <form-item>
+                                    <Button type="primary" @click="">发布</Button>
+                                    <Button type="ghost" @click="" style="margin-left: 8px">保存草稿</Button>
+                                    <Button type="ghost" @click="" style="margin-left: 8px">预览</Button>
+                                </form-item>
+                            </i-form>
                         </Card>
                     </i-col>
                     <i-col class="mt10">
@@ -84,10 +108,15 @@
 </template>
 
 <script>
+    import gql from 'graphql-tag'
+
     const prefixCls = 'backendArticleDetail'
     export default {
         name: 'article-detail',
         layout: 'backend',
+        apollo: {
+            article: gql`{article}`
+        },
         props: {
             prefixCls: {
                 type: String,
@@ -132,37 +161,37 @@
                     preview: true // 预览
                 },
                 tags: [],
-                classification: [{
-                    title: 'vue'
-                }, {
-                    title: 'vue'
-                }, {
-                    title: 'vue'
-                }, {
-                    title: 'vue'
-                }, {
-                    title: 'vue'
-                }, {
-                    title: 'vue'
-                }, {
-                    title: 'vue'
-                }, {
-                    title: 'vue'
-                }, {
-                    title: 'vue'
-                }, {
-                    title: 'vue'
-                }, {
-                    title: 'vue'
-                }, {
-                    title: 'vue'
-                }]
+                classification: [
+                    {
+                        title: 'vue'
+                    }, {
+                        title: 'vue'
+                    }, {
+                        title: 'vue'
+                    }, {
+                        title: 'vue'
+                    }, {
+                        title: 'vue'
+                    }, {
+                        title: 'vue'
+                    }, {
+                        title: 'vue'
+                    }, {
+                        title: 'vue'
+                    }, {
+                        title: 'vue'
+                    }, {
+                        title: 'vue'
+                    }, {
+                        title: 'vue'
+                    }, {
+                        title: 'vue'
+                    }
+                ],
+                article: {}
             }
         },
-        methods: {
-            handlerFullScreen() {
-            }
-        }
+        methods: {}
     }
 </script>
 
@@ -170,7 +199,7 @@
     $backend__articleDetailPrefixCls: 'backendArticleDetail';
     .#{$backend__articleDetailPrefixCls} {
         &__editor {
-            height: 760px;
+            height: 705px;
             .v-note-op {
                 position: sticky;
                 top: 64px;
