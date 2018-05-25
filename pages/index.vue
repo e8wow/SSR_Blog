@@ -15,7 +15,11 @@
         components: {ArticleList, ArticleListItem},
         apollo: {
             articles: {
-                query: articles
+                query: articles,
+                variables: {
+                    page: 1,
+                    limit: 10
+                }
             }
         },
         data() {
