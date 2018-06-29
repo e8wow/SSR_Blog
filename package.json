@@ -13,14 +13,25 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+      "@nuxtjs/apollo": "^3.0.6",
     "@nuxtjs/axios": "^5.3.1",
+      "apollo-cache-inmemory": "^1.2.1",
+      "apollo-client": "^2.3.1",
+      "apollo-link": "^1.2.2",
+      "apollo-link-http": "^1.5.4",
     "axios": "^0.18.0",
-    "element-ui": "^2.3.6",
-    "nuxt": "^1.0.0"
+      "graphql": "^0.13.2",
+      "graphql-tag": "^2.9.2",
+    "iview": "^2.13.1",
+      "mavon-editor": "^2.5.9",
+      "node-fetch": "^2.1.2",
+      "nuxt": "^1.0.0",
+      "vue-apollo": "^3.0.0-beta.12"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "babel-plugin-component": "^1.1.0",
+    "babel-plugin-import": "^1.7.0",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-friendly-formatter": "^3.0.0",
